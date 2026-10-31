@@ -1,7 +1,7 @@
 {
   "id": "neobase.echecs",
   "name": "Échecs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "NDesumeur",
   "description": "Une partie d'échecs contre l'ordinateur, plusieurs niveaux ; la partie en cours est gardée.",
   "icon": "icon.png",
