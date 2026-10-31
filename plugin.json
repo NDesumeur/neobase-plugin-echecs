@@ -1,0 +1,19 @@
+{
+  "id": "neobase.echecs",
+  "name": "Échecs",
+  "version": "1.0.0",
+  "author": "NDesumeur",
+  "description": "Une partie d'échecs contre l'ordinateur, plusieurs niveaux ; la partie en cours est gardée.",
+  "icon": "icon.png",
+  "entry": "index.js",
+  "view": "echecs",
+  "neobase": ">=4.0.0",
+  "type": "app",
+  "category": "Jeux",
+  "mobile": false,
+  "system": false,
+  "dependencies": {},
+  "permissions": [
+    "full"
+  ]
+}
