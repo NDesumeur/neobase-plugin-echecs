@@ -1,6 +1,6 @@
 // Échecs : ton appli d'origine (HTML et code inchangés), livrée en plugin.
-// Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
+// Ses données sont dans le dossier du plugin, que NeoDex sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoDex.
+// Elle tourne dans le bac à sable de NeoDex, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"appWrap wide\">\n      <div class=\"agHead\"><span class=\"label\">Échecs</span><span class=\"hint\" id=\"chInfo\"></span><div class=\"agNav\"><select class=\"f gSel\" id=\"chLevel\"><option value=\"0\">Débutant</option><option value=\"1\">Facile</option><option value=\"2\" selected>Moyen</option><option value=\"3\">Difficile</option><option value=\"4\">Expert</option><option value=\"5\">Maître</option><option value=\"6\">Grand maître</option></select><select class=\"f gSel\" id=\"chColor\"><option value=\"w\" selected>Je joue les blancs</option><option value=\"b\">Je joue les noirs</option><option value=\"r\">Couleur au hasard</option></select><button class=\"btn px\" id=\"chUndo\">ANNULER</button><button class=\"btn px\" id=\"chNew\">NOUVELLE PARTIE</button></div></div>\n      <div class=\"chMain\"><div class=\"chBoardWrap\"><div id=\"chBoard\" class=\"px\"></div><div id=\"chPromo\" class=\"chPromo px\"></div></div>\n        <div class=\"chSide\"><div class=\"chState\" id=\"chState\"></div><div class=\"chTaken\" id=\"chTakenAi\"></div><div class=\"sysCard px chMovesCard\"><span class=\"label\">Coups</span><div id=\"chMoves\" class=\"chMoves\"></div></div><div class=\"chTaken\" id=\"chTakenMe\"></div></div></div>\n      <img id=\"chGhost\" alt=\"\">\n      <div class=\"hint\">Clique une pièce puis sa case d'arrivée, ou fais-la glisser. Notation française : R roi, D dame, T tour, F fou, C cavalier. La partie en cours est gardée.</div>\n    </div>";
 /*CSS-MOVED*/ const CSS = `.gSel{width:auto;font-size:14px;padding:6px 10px;margin-right:8px}
 .chMain{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
@@ -38,10 +38,10 @@ const HTML = "<div class=\"appWrap wide\">\n      <div class=\"agHead\"><span cl
 .chTaken{display:flex;align-items:center;gap:2px;min-height:32px}
 .chTaken img{width:28px;height:28px;image-rendering:pixelated}
 .chTaken b{margin-left:8px;color:var(--lilac)}
-`;  // le style de ce plugin (il utilise les variables du thème de NeoBase)
+`;  // le style de ce plugin (il utilise les variables du thème de NeoDex)
 export default async function (ctx) {
   const view = ctx.view;
-  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoBase pour s'ouvrir."; return; }
+  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoDex pour s'ouvrir."; return; }
   const host = ctx.host, { el, toast, sfx, ask, newTab, pixIcon, PIX, WX } = host;
   const folder = ctx.folder, legacy = ctx.legacy || {};
   ctx.host.addStyle(CSS);

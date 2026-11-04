@@ -1,6 +1,6 @@
 {
-  "pluginId": "neobase.echecs",
-  "repo": "NDesumeur/neobase-plugin-echecs",
+  "pluginId": "neodex.echecs",
+  "repo": "NDesumeur/neodex-plugin-echecs",
   "version": "1.0.1",
   "sha256": "06fd7e7270f83fb4dfbfb0b693ff6030fb31077c111221170682f6c3af399e74",
   "approvedAt": "2026-10-31T17:51:20.956Z",
